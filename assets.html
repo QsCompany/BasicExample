@@ -1,0 +1,53 @@
+﻿<templates>
+    <descriptor type="bind.DObject" name="test">
+        <template name="PersonInfoTemplate">            
+            <section db-job="stop">
+                <div class="container" db-job="stop">
+                    <script>;</script>
+                    <div class="row">
+                        <div class="col-md-4 pull-right" style="background: #00aff2; padding: 15px; background-color: #337ab7;">
+                            <div class="media block block-primary-head no-pad">
+
+                                <h3>
+                                    <i class="fa fa-pencil h3i glyphicon glyphicon-pencil"></i>
+                                    Personal Info
+                                </h3>
+
+                                <div class="block-content media-body">
+                                    <form role="form">
+                                        <div class="form-group ">
+                                            <label>First Name</label>
+                                            <input type="text" required class="form-control fc" placeholder="FirstName required" db-check='username' db-bind="FirstName" db-job='input' db-twoway="3" />
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label>Last Name</label>
+                                            <input type="text" required class="form-control fc" placeholder="LastName required" db-check='username' db-bind="LastName" db-job='input' db-twoway="3" />
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label>Full Name</label>
+                                            <label class="form-control fc" db-bind="FullName" db-job='label' />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Gender</label>
+                                            <input class="kicnt kitext" db-bind="Gender" db-job="enumoption" enum="Gender" db-twoway="true">
+                                        </div>
+                                        <button type="button" on-click='this.[:view].backup' class="btn b btn-danger pull-right">SAVE STATE</button>
+                                        <button type="button" on-click='this.[:view].restore' class="btn b btn-default pull-right">RESTORE</button>
+                                    </form>
+                                </div>
+                                <div class="badge " style="color:black;margin:auto" db-bind="CheckLogging" db-job="loggedjob" db-twoway="false">
+                                    YOU ARE NOT LOGGED .
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </template>
+    </descriptor>
+</templates>

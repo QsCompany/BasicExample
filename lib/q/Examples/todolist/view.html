@@ -1,0 +1,18 @@
+﻿<template private name="View">
+    <div class="row">
+        <input class="form-control col-lg-8">
+        <button class="form-control col-lg-4" on-click="this.AddItem">
+            <span class="glyphicon glyphicon-plus">
+            </span> ADD
+        </button>
+    </div>
+    <div class="row">
+        <control db-control="adapter" db-bind="Values">
+            <div class="list-group" style="width:100%" db-content>
+                <template>
+                    <button type="button" class="list-group-item list-group-item-action"  db-bind="Title" db-job="label"></button>
+                </template>
+            </div>
+        </control>
+    </div>
+</template>
